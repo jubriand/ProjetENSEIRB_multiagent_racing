@@ -79,19 +79,7 @@ class Vehicule:
                 
                 
     def steerSeparation(self, vehicules):
-         forceAccu=(0,2) # starts with a fresh force #TODO mettre l'inverse de la vitesse
-         #for v in vehicules:
-# =============================================================================
-# 
-#          while self._collision==True:
-#               
-#               self._force=forceAccu
-#               self._maxspeed=2
-#               self._color=(100,200,100)
-#               self._collision=False
-#         
-# =============================================================================
-         
+         forceAccu=(0,2) # starts with a fresh force #TODO mettre l'inverse de la vitesse     
 
 
     def drawMe(self, screen):
@@ -101,14 +89,14 @@ class Vehicule:
 class Ambulance(Vehicule):
         _color=(100,200,100)      
         _maxspeed=10
-        _healingRadius=20
+        _healingRadius=40
         def __init__(self,coords):
             super().__init__(coords=coords, radius=8)
         
         def drawMe(self, screen):
             pygame.draw.circle(screen,self._color,   self._coords,self._radius,0)
             pygame.draw.circle(screen,self._colorfg, self._coords,self._radius,1)
-            pygame.draw.circle(screen, self._color, self._coords, 20, width=1)
+            pygame.draw.circle(screen, self._color, self._coords, self._healingRadius, width=1)
            
 class SetOfVehicules:
     _vehicules = []
@@ -147,13 +135,12 @@ class SetOfVehicules:
                         if al != 0 and al <= v1._healingRadius: # collision
                                 
                                 v1._color=(200,200,100)                               
-                                #v2._color=(200,200,100)
+                                v2._color=(200,200,100)
                                 v2._maxspeed=10 
                                 v2._collision=False
         
                         
     def lookAhead(self , car, distanceAfar=2):
-
         for v in self._vehicules:
             l_car = approximateLength(car._speed)*distanceAfar
             l_v = approximateLength(v._speed)
@@ -171,14 +158,8 @@ class SetOfVehicules:
                 v._collision=False
                 v._color=(100,200,100)
                 v._maxspeed=10
-            if v._collision==False:
-                v._maxspeed=10
-            #elif v._collision==False: 
-            #     v._color=(100,100,100)
-            #     if (v is Ambulance):
-            #         v._maxspeed=Ambulance._maxspeed
-            #     else:
-            #         v._maxspeed=Vehicule._maxspeed
+            
+          
             
 
     def updatePositions(self):
