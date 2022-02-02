@@ -15,4 +15,4 @@ Une voiture pourrait ralentir voire s'arreter devant un accident pour éviter de
 
 <img src="./pictures/beforeAcc.png">
 <img src="./pictures/afterAcc.png">
-![Alt text](./pictures/beforeAcc.png?raw=true "Title")
+![plot](./pictures/beforeAcc.png)
