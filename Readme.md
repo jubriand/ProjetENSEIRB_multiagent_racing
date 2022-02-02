@@ -13,5 +13,5 @@ Le halo de soin fais ralentir les véhicules à la même allure que les ambulanc
 ### Améliorations possibles
 Une voiture pourrait ralentir voire s'arreter devant un accident pour éviter de l'agrandir et créer un carambolage.
 
-<img src="/pictures/beforeAcc.jpg">
-<img src="/pictures/afterAcc.jpg">
+<img src="/pictures/beforeAcc.png">
+<img src="/pictures/afterAcc.png">
